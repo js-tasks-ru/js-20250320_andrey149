@@ -6,7 +6,7 @@ export default class SortableTable {
     this.headerConfig = headerConfig;
     this.data = data;
 
-    this.element = this.createElement();
+    this.element = this.createElement(this.createTableTemplate());
     this.selectSubElements();
   }
 
@@ -62,9 +62,9 @@ export default class SortableTable {
   }
 
   // Main
-  createElement() {
+  createElement(template) {
     const element = document.createElement("div");
-    element.innerHTML = this.createTableTemplate();
+    element.innerHTML = template;
     return element.firstElementChild;
   }
 
